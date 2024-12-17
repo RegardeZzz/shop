@@ -72,6 +72,27 @@ header a {
 .nav-links li {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.nav-links li:hover p {
+  color: #67ABAB; /* Цвет текста при наведении */
+}
+
+/* Стили для зеленой полоски */
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Расстояние до текста */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #67ABAB; /* Цвет полоски */
+  transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%; /* Полоска занимает ширину текста при наведении */
 }
 
 .nav-links a {

@@ -167,7 +167,27 @@
     text-decoration: none;
     color: #1e1e1e;
     font-family: regular;
-    
+    position: relative;
+}
+
+.option:hover {
+  color: #67ABAB; /* Цвет текста при наведении */
+}
+
+/* Стили для зеленой полоски */
+.option::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Расстояние до текста */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #67ABAB; /* Цвет полоски */
+  transition: width 0.3s ease;
+}
+
+.option:hover::after {
+  width: 100%; /* Полоска занимает ширину текста при наведении */
 }
 
 .search_bar {
@@ -227,6 +247,7 @@
     display: flex;
     text-align: center;
     margin-top: 5%;
+    
 }
 
 .catalog {
@@ -241,6 +262,12 @@
     font-family: regular;
     color: white;
     margin-top: 5%;
+    transition: background-color 0.4s, box-shadow 0.2s 0.3s; /* Время перехода */
+}
+
+.catalog:hover {
+    background-color: #3f8a7c; /* Цвет фона */
+    box-shadow: 0 0 0 2px #fff, 0px 0px 0px 4px #3f8a7c; /* Тень в виде рамки */ 
 }
 
 .makaron_cards{
@@ -358,6 +385,19 @@
     max-height: 51px;
     height: 100vh;
 }
+
+.stocks_all {
+    background-color: #71b2ae; /* Цвет фона */
+    border: none; /* Убираем рамку */
+    transition: background-color 0.4s, box-shadow 0.2s 0.3s; /* Время перехода */
+    color: #fff;
+}
+
+.stocks_all:hover {
+    background-color: #3f8a7c; /* Цвет фона */
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #3f8a7c; /* Тень в виде рамки */ 
+}
+
 
 .stocks_card_1 h3, .stocks_card_2 h3, .stocks_card_3 h3{
     font-family: medium;
