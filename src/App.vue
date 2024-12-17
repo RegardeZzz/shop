@@ -1,26 +1,66 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <div id="app">
+        <!-- Header общий для всех страниц -->
+        <Header />
+
+        <!-- Маршруты для разных страниц -->
+        <router-view />
+
+        <!-- Footer общий для всех страниц -->
+        <Footer />
+    </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+// Импорт компонентов
+import Header from './components/HeaderPage.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    Footer,
+  },
+};
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="css">
+
+@font-face {
+  font-family: "bold";
+  src: url("@/assets/font/Montserrat-Bold.woff2") format("woff2"),
+       url("@/assets/font/Montserrat-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "medium";
+  src: url("@/assets/font/Montserrat-Medium.woff2") format("woff2"),
+       url("@/assets/font/Montserrat-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "regular";
+  src: url("@/assets/font/Montserrat-Regular.woff2") format("woff2"),
+       url("@/assets/font/Montserrat-Regular.woff") format("woff");
+}
+    
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}   
+
+.wrapper {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
 }
 </style>
