@@ -47,12 +47,12 @@ export default {
           {
               icon: require('@/assets/img/footer/telegram.svg'),
               alt: "telegram",
-              link: "https://t.me/reklempub", 
+              link: "https://t.me/+CQ2Lu3fGQWc2OTdi", 
           },
           {
               icon: require('@/assets/img/footer/vk.svg'),
               alt: "vk",
-              link: "https://t.me/reklempub",
+              link: "https://vk.com/club228691255",
           },
       ],
       };

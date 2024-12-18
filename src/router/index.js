@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 // Ленивый импорт всех компонентов
 const HomePage = () => import('../views/HomePage.vue');
 const AboutPage = () => import('../views/AboutPage.vue');
-//const ContactsPage = () => import('../views/ContactsPage.vue');
+const ContactsPage = () => import('../views/ContactsPage.vue');
 const SalePage = () => import('../views/SalePage.vue');
 const ReviewPage = () => import('../views/ReviewPage.vue');
 const CatalogPage = () => import('../views/CatalogPage.vue');
@@ -13,7 +13,7 @@ const ProductDetails = () => import('../views/ProductDetails.vue');
 const routes = [
     { path: '/', component: HomePage },
     { path: '/about', component: AboutPage },
-    //{ path: '/contacts', component: ContactsPage },
+    { path: '/contacts', component: ContactsPage },
     { path: '/sale', component: SalePage },
     { path: '/review', component: ReviewPage },
     { path: '/catalog', component: CatalogPage },

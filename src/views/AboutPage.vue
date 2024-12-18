@@ -101,11 +101,23 @@
 .button--primary {
     background-color: #9dc4c4;
     color: #fff;
+    transition: background-color 0.4s, box-shadow 0.2s 0.3s; /* Время перехода */
+}
+
+.button--primary:hover {
+    background-color: #3f8a7c; /* Цвет фона */
+    box-shadow: 0 0 0 2px #fff, 0px 0px 0px 4px #3f8a7c; /* Тень в виде рамки */ 
 }
 
 .button--secondary {
     background-color: #9dc4c4;
     color: #fff;
+    transition: background-color 0.4s, box-shadow 0.2s 0.3s; /* Время перехода */
+}
+
+.button--secondary:hover {
+    background-color: #3f8a7c; /* Цвет фона */
+    box-shadow: 0 0 0 2px #fff, 0px 0px 0px 4px #3f8a7c; /* Тень в виде рамки */ 
 }
 
 /* Каталог */

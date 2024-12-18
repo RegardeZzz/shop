@@ -29,6 +29,7 @@
     export default {
         name: "HeaderPage",
     }
+
 </script>
 
 <style scoped>
