@@ -17,8 +17,8 @@
 
                 <!-- Иконки пользователя и корзины -->
                 <div class="icons">
-                    <a href="#"><img src="@/assets/img/header/user.svg" alt="Личный кабинет" /></a>
-                    <a href="#"><img src="@/assets/img/header/shop.svg" alt="Корзина" /></a>
+                  <router-link to="/auth"><img src="@/assets/img/header/user.svg" alt="Личный кабинет" /></router-link>
+                  <router-link to="/shop"><img src="@/assets/img/header/shop.svg" alt="Корзина" /></router-link>
                 </div>
             </nav>
         </section>

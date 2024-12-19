@@ -9,6 +9,8 @@ const ReviewPage = () => import('../views/ReviewPage.vue');
 const CatalogPage = () => import('../views/CatalogPage.vue');
 const CatalogMacaronPage = () => import('../views/CatalogMacaronPage.vue');
 const ProductDetails = () => import('../views/ProductDetails.vue');
+const AuthPage = () => import('../views/AuthPage.vue');
+const ShopPage = () => import('../views/ShopPage.vue');
 
 const routes = [
     { path: '/', component: HomePage },
@@ -19,6 +21,8 @@ const routes = [
     { path: '/catalog', component: CatalogPage },
     { path: '/macaron', component: CatalogMacaronPage },
     { path: "/product/:id", name: "ProductDetails", component: ProductDetails },
+    { path: '/auth', component: AuthPage },
+    { path: '/shop', component: ShopPage },
 ];
 
 const router = createRouter({

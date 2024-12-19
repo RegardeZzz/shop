@@ -64,21 +64,21 @@ export default {
           id: 1, 
           name: "Шоколадный торт", 
           imgSrc: require("@/assets/img/product/chocolate_cake.svg"), 
-          price: "Р 450.00", 
+          price: "450.00 ₽", 
           description: "Нежный шоколадный торт с кремом и ягодами, идеален для любого торжества."
         },
         { 
           id: 2, 
           name: "Торт Наполеон", 
           imgSrc: require("@/assets/img/product/napoleon_cake.svg"), 
-          price: "Р 550.00", 
+          price: "550.00 ₽", 
           description: "Классический торт Наполеон с тонкими слоеными коржами и кремом."
         },
         { 
           id: 3, 
           name: "Пирожное Эклер", 
           imgSrc: require("@/assets/img/product/eclair.svg"), 
-          price: "Р 80.00", 
+          price: "80.00 ₽", 
           description: "Традиционное пирожное Эклер с мягким заварным кремом и глазурью."
         }
       ]
@@ -112,12 +112,31 @@ export default {
     ];
   },
   methods: {
-    addToCart(item) {
-      console.log(`Товар "${item.name}" добавлен в корзину!`);
-      // Здесь будет логика добавления товара в корзину
+    // Метод для добавления товара в корзину
+    addToCart(item = this.product) {
+      // Загружаем корзину из localStorage (или создаём пустую корзину)
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Проверяем, есть ли товар уже в корзине
+      const existingItem = cart.find(cartItem => cartItem.id === item.id);
+
+      if (existingItem) {
+        // Если товар уже есть, увеличиваем количество
+        existingItem.quantity += 1;
+      } else {
+        // Если товара нет, добавляем его с количеством 1
+        cart.push({ ...item, quantity: 1 });
+      }
+
+      // Сохраняем обновлённую корзину обратно в localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Показываем уведомление
+      alert(`Товар "${item.name}" добавлен в корзину!`);
     },
+    // Метод для возврата на предыдущую страницу
     goBack() {
-      this.$router.go(-1); // Возвращаемся на предыдущую страницу
+      this.$router.go(-1);
     }
   }
 };
@@ -247,8 +266,7 @@ export default {
 
 .dessert-list {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .dessert-item {
